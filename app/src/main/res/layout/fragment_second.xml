@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="360dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+    <com.xt.excelviewlib.view.ExcelView
+        android:id="@+id/excel_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:excel_view_divider_color="#dddddd"
+        app:excel_view_divider_width="1px"
+        app:excel_view_item_height="28dp"
+        app:excel_view_item_width="70dp"
+        app:excel_view_padding_left="15dp"
+        app:excel_view_padding_top="9dp"
+        app:excel_view_select_bg_color="#0a2870F6"
+        app:excel_view_select_divider_color="#2870F6"
+        app:excel_view_text_size="11sp" />
+
+
+</RelativeLayout>

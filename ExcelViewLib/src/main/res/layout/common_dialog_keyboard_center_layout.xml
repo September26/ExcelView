@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#35000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/keyboard_center_container"
+        android:layout_width="228dp"
+        android:layout_height="127dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/original_common_corner_ffffff_r7"
+        android:clickable="false">
+
+        <TextView
+            android:id="@+id/keyboard_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="11dp"
+            android:text="请输入"
+            android:textColor="#999999"
+            android:textSize="9sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/keyboard_close"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/common_dialog_keyboard_close"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/keyboard_title" />
+
+        <View
+            android:id="@+id/keyboard_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="#e8e8e8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/keyboard_title" />
+
+
+        <TextView
+            android:id="@+id/keyboard_action_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="操作："
+            android:textSize="8sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/keyboard_divider" />
+
+
+        <TextView
+            android:id="@+id/keyboard_add"
+            android:layout_width="38dp"
+            android:layout_height="16dp"
+            android:background="@drawable/common_keyboard_item_selector"
+            android:gravity="center"
+            android:text="加"
+            android:textSize="8sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/keyboard_action_name"
+            app:layout_constraintTop_toTopOf="@id/keyboard_action_name" />
+
+        <TextView
+            android:id="@+id/keyboard_sub"
+            android:layout_width="38dp"
+            android:layout_height="16dp"
+            android:background="@drawable/common_keyboard_item_selector"
+            android:gravity="center"
+            android:text="减"
+            android:textSize="8sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/keyboard_add"
+            app:layout_constraintTop_toTopOf="@id/keyboard_action_name" />
+
+
+        <TextView
+            android:id="@+id/keyboard_multi"
+            android:layout_width="38sp"
+            android:layout_height="16sp"
+            android:background="@drawable/common_keyboard_item_selector"
+            android:gravity="center"
+            android:text="乘"
+            android:textSize="8sp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/keyboard_sub"
+            app:layout_constraintTop_toTopOf="@id/keyboard_action_name" />
+
+
+        <TextView
+            android:id="@+id/keyboard_division"
+            android:layout_width="38dp"
+            android:layout_height="16dp"
+            android:background="@drawable/common_keyboard_item_selector"
+            android:gravity="center"
+            android:text="除"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toRightOf="@id/keyboard_multi"
+            app:layout_constraintTop_toTopOf="@id/keyboard_action_name" />
+
+        <TextView
+            android:id="@+id/keyboard_assign"
+            android:layout_width="38dp"
+            android:layout_height="16dp"
+            android:background="@drawable/common_keyboard_item_selector"
+            android:gravity="center"
+            android:text="编辑"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toRightOf="@id/keyboard_division"
+            app:layout_constraintTop_toTopOf="@id/keyboard_action_name" />
+
+        <!--    数值-->
+        <TextView
+            android:id="@+id/keyboard_value_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/common_keyboard_btn_selector"
+            android:gravity="center"
+            android:text="数值:"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/keyboard_value_value" />
+
+        <EditText
+            android:id="@+id/keyboard_value_value"
+            android:layout_width="0dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/common_rect_c9ced4_hollow"
+            android:gravity="center"
+            android:hint="请输入优化数据"
+            android:inputType="number"
+            android:textSize="8sp"
+            app:layout_constraintLeft_toLeftOf="@+id/keyboard_add"
+            app:layout_constraintRight_toRightOf="@id/keyboard_assign"
+            app:layout_constraintTop_toBottomOf="@id/keyboard_action_name" />
+
+        <TextView
+            android:id="@+id/keyboard_action_confirm"
+            android:layout_width="40dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/common_rect_r2_2870f6_shadow"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="#ffffff"
+            android:textSize="7sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/keyboard_assign"
+            app:layout_constraintTop_toBottomOf="@id/keyboard_action_name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

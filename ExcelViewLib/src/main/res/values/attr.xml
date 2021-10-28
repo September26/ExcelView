@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CommonSeekBar">
+        <attr name="seekbar_thumb_height" format="dimension" />
+        <attr name="seekbar_thumb_width" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ExcelView">
+        <attr name="excel_view_item_width" format="dimension|reference" />
+        <attr name="excel_view_item_height" format="dimension|reference" />
+        <attr name="excel_view_divider_width" format="dimension|reference" />
+        <attr name="excel_view_range_icon_width" format="dimension|reference" />
+        <attr name="excel_view_padding_top" format="dimension|reference" />
+        <attr name="excel_view_padding_left" format="dimension|reference" />
+        <attr name="excel_view_divider_color" format="color" />
+        <attr name="excel_view_only_read_color" format="color" />
+        <attr name="excel_view_text_color" format="color" />
+        <attr name="excel_view_select_bg_color" format="color" />
+        <attr name="excel_view_select_divider_color" format="color" />
+        <attr name="excel_view_text_size" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CommonVerticalSeekBar">
+        <attr name="seekbar_isforward" format="boolean" />
+    </declare-styleable>
+</resources>

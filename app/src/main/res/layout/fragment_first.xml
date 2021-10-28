@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="360dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <com.xt.excelviewlib.view.CommonVerticalSeekBar
+        android:id="@+id/scroll_y"
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/common_seekbar_style2"
+        android:thumb="@drawable/common_progress_drag_button"
+        app:seekbar_isforward="true"
+        app:seekbar_thumb_height="10dp"
+        app:seekbar_thumb_width="10dp" />
+
+    <com.xt.excelviewlib.view.CommonSeekBar
+        android:id="@+id/scroll_x"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/common_seekbar_style2"
+        android:thumb="@drawable/common_progress_drag_button"
+        app:seekbar_thumb_height="10dp"
+        app:seekbar_thumb_width="10dp" />
+
+    <com.xt.excelviewlib.view.ExcelView
+        android:id="@+id/excel_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scroll_x"
+        android:layout_toLeftOf="@+id/scroll_y"
+        android:clickable="true"
+        app:excel_view_divider_color="#dddddd"
+        app:excel_view_divider_width="1px"
+        app:excel_view_item_height="28dp"
+        app:excel_view_item_width="70dp"
+        app:excel_view_padding_left="15dp"
+        app:excel_view_padding_top="9dp"
+        app:excel_view_select_bg_color="#0a2870F6"
+        app:excel_view_select_divider_color="#2870F6"
+        app:excel_view_text_size="11sp" />
+
+
+</RelativeLayout>
+

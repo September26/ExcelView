@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="#d4d8dd"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp">
+
+    <TextView
+        android:id="@+id/keyboard_add"
+        android:layout_width="118dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="加"
+        android:textColor="@color/color_select_2870f6_666666"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/keyboard_sub"
+        android:layout_width="118dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="减"
+        android:textColor="@color/color_select_2870f6_666666"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_add" />
+
+
+    <TextView
+        android:id="@+id/keyboard_multi"
+        android:layout_width="118dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="乘"
+        android:textColor="@color/color_select_2870f6_666666"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_sub" />
+
+    <TextView
+        android:id="@+id/keyboard_division"
+        android:layout_width="118dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="除"
+        android:textColor="@color/color_select_2870f6_666666"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_multi" />
+
+
+    <TextView
+        android:id="@+id/keyboard_reversal"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="反转"
+        app:layout_constraintBottom_toTopOf="@id/keyboard_assign"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_add"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextView
+        android:id="@+id/keyboard_assign"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="编辑"
+        android:textColor="@color/color_select_2870f6_666666"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_add"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_reversal"
+        app:layout_constraintVertical_weight="1" />
+
+    <View
+        android:id="@+id/keyboard_divider"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:background="#B3B8C1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/keyboard_reversal"
+        app:layout_constraintRight_toLeftOf="@+id/keyboard_num_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/keyboard_num_1"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="1"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_divider"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/keyboard_num_2"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="2"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_num_1"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_num_1" />
+
+    <TextView
+        android:id="@+id/keyboard_num_3"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="3"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_num_2"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_num_1" />
+
+    <TextView
+        android:id="@+id/keyboard_num_4"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="4"
+        app:layout_constraintLeft_toLeftOf="@id/keyboard_num_1"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_num_1" />
+
+    <TextView
+        android:id="@+id/keyboard_num_5"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="5"
+        app:layout_constraintLeft_toLeftOf="@id/keyboard_num_2"
+        app:layout_constraintTop_toTopOf="@id/keyboard_num_4" />
+
+    <TextView
+        android:id="@+id/keyboard_num_6"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="6"
+        app:layout_constraintLeft_toLeftOf="@id/keyboard_num_3"
+        app:layout_constraintTop_toTopOf="@id/keyboard_num_4" />
+
+    <TextView
+        android:id="@+id/keyboard_num_7"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="7"
+        app:layout_constraintLeft_toLeftOf="@id/keyboard_num_1"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_num_4" />
+
+    <TextView
+        android:id="@+id/keyboard_num_8"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="8"
+        app:layout_constraintLeft_toLeftOf="@id/keyboard_num_2"
+        app:layout_constraintTop_toTopOf="@id/keyboard_num_7" />
+
+    <TextView
+        android:id="@+id/keyboard_num_9"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="9"
+        app:layout_constraintLeft_toLeftOf="@id/keyboard_num_3"
+        app:layout_constraintTop_toTopOf="@id/keyboard_num_7" />
+
+    <TextView
+        android:id="@+id/keyboard_num_point"
+        android:layout_width="55dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="."
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/keyboard_num_1"
+        app:layout_constraintRight_toRightOf="@id/keyboard_num_1"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_num_7" />
+
+    <TextView
+        android:id="@+id/keyboard_num_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/common_keyboard_btn_selector"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/keyboard_num_point"
+        app:layout_constraintLeft_toLeftOf="@id/keyboard_num_2"
+        app:layout_constraintRight_toRightOf="@id/keyboard_num_3"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_num_point" />
+
+
+    <TextView
+        android:id="@+id/keyboard_negative"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/common_button_b3b8c1"
+        android:gravity="center"
+        android:text="-"
+        app:layout_constraintBottom_toTopOf="@+id/keyboard_del"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_num_3"
+        app:layout_constraintTop_toTopOf="@+id/keyboard_num_1"
+        app:layout_constraintVertical_weight="1" />
+
+
+    <ImageView
+        android:id="@+id/keyboard_del"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/common_button_b3b8c1"
+        android:gravity="center"
+        android:src="@drawable/common_keyboard_del2"
+        app:layout_constraintBottom_toBottomOf="@id/keyboard_num_point"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_num_3"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_negative"
+        app:layout_constraintVertical_weight="1" />
+
+    <View
+        android:id="@+id/keyboard_divider2"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:background="#B3B8C1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/keyboard_del"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/keyboard_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        android:text="对选中的区域进行操作"
+        android:textColor="#999999"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toRightOf="@+id/keyboard_divider2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/keyboard_type_name"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="操作"
+        android:textColor="#333333"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toLeftOf="@+id/keyboard_note"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_note" />
+
+    <TextView
+        android:id="@+id/keyboard_type_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="加"
+        android:textColor="#2870F6"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toRightOf="@+id/keyboard_type_name"
+        app:layout_constraintTop_toTopOf="@id/keyboard_type_name" />
+
+    <TextView
+        android:id="@+id/keyboard_value_name"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="数值"
+        android:textColor="#333333"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toRightOf="@+id/keyboard_type_value"
+        app:layout_constraintTop_toTopOf="@id/keyboard_type_name" />
+
+    <TextView
+        android:id="@+id/keyboard_value_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text=""
+        android:textColor="#2870F6"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toRightOf="@+id/keyboard_value_name"
+        app:layout_constraintTop_toTopOf="@id/keyboard_type_name" />
+
+
+    <TextView
+        android:id="@+id/keyboard_action_warn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:maxWidth="181dp"
+        android:text="注意：\n点击确认后并未直接写入ECU，如果吸入清点击右上方写入按钮"
+        android:textColor="#E02020"
+        android:textSize="8sp"
+        app:layout_constraintLeft_toLeftOf="@+id/keyboard_note"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_type_name" />
+
+
+    <TextView
+        android:id="@+id/keyboard_action_confirm"
+        android:layout_width="181dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/common_rect_r2_2870f6_shadow"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="确认"
+        android:textColor="#ffffff"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/keyboard_note" />
+
+    <ImageView
+        android:id="@+id/keyboard_close"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/common_dialog_keyboard_close"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
