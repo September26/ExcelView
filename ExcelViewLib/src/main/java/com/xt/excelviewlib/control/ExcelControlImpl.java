@@ -114,15 +114,15 @@ public class ExcelControlImpl implements ExcelControlInter {
                             mSelectRange = selectRange.clone();
                         } else if (index == 1) {
                             //粘贴
-                            List arrayList = new ArrayList<List<Double>>();
+                            List<List<Double>> arrayList = new ArrayList<>();
                             int startColumn = mSelectRange[0]; //第几列，X轴
                             int startRow = mSelectRange[1]; //第几行，Y轴
                             int endColumn = mSelectRange[2];
                             int endRow = mSelectRange[3];
                             for (int row = startRow; row < endRow; row++) {
                                 List<Double> line = model.dataList.get(row);
-                                ArrayList<Double> doubles = new ArrayList<>();
-                                doubles.addAll(line.subList(startColumn, endColumn + 1));
+                                ArrayList<Double> doubles = new ArrayList<>(line.subList(startColumn, endColumn + 1));
+                                arrayList.add(doubles);
                             }
                             excelView.notifyDataChangeByRange(selectRange[1], selectRange[0], arrayList);
                             mSelectRange = null;
