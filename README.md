@@ -31,11 +31,14 @@
 
 
 ## 使用介绍
-* 1.依赖ExcelViewLib库。
-* 2.简单使用方式参照app中的fragment1和fragment2。
+* 1.参照app中的使用方法，build.gradle中添加依赖：'io.github.september26:excelview:0.9.0'
+* 2.参照app中Fragment1和Fragment2中的使用方法，直接使用ExcelControlImpl中已经写好的组合逻辑，或者继承ExcelControlImpl重写其组合逻辑。
 * 3.可扩展性：可通过继承ControlImpl重写其方法实现不同的业务场景逻辑。
-* 4.可扩展性：可自定义Dialog，通过ControlImpl于ExcelView组合实现自定义样式。
+* 4.可扩展性：可自定义Dialog，通过ControlImpl和ExcelView组合实现对应场景逻辑。
 
+## 后续计划
+* 1.添加excel导出为xls文件功能。
+* 2.看issues中的需求。
 
 
 ## 实现逻辑介绍
