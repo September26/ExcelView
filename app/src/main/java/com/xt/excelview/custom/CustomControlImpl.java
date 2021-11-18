@@ -45,7 +45,7 @@ public class CustomControlImpl extends ExcelControlImpl {
                     if (i < startRow || i > endRow) {
                         continue;
                     }
-                    for (int j = startColumn; j < endColumn; j++) {
+                    for (int j = startColumn; j <= endColumn; j++) {
                         Double old = dataList.get(i).get(j);
                         Double newValue = 0.0;
                         switch (type) {

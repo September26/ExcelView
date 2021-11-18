@@ -295,15 +295,15 @@ public class ExcelView extends View {
         //绘制普通分割线
         for (int column = 0; column <= this.mShowValue.columnNum; column++) {
             pts[0] = startX;
-            pts[1] = startY + itemViewHeight + column * itemViewHeight;
+            pts[1] = startY + column * itemViewHeight;
             pts[2] = mShowValue.viewWidth;
-            pts[3] = startY + itemViewHeight + column * itemViewHeight;
+            pts[3] = startY + column * itemViewHeight;
             canvas.drawLines(pts, mDividerPaint);
         }
         for (int row = 0; row <= this.mShowValue.rowNum; row++) {
-            pts[0] = startX + itemViewWidth + row * itemViewWidth;
+            pts[0] = startX + row * itemViewWidth;
             pts[1] = startY;
-            pts[2] = startX + itemViewWidth + row * itemViewWidth;
+            pts[2] = startX + row * itemViewWidth;
             pts[3] = mShowValue.viewHeight;
             canvas.drawLines(pts, mDividerPaint);
         }
@@ -496,9 +496,15 @@ public class ExcelView extends View {
         //这里有title和没有title算法是不一样的
         int row = (int) ((startPoint.x - mShowValue.offsetX - ((mShowValue.hasRowTitle) ? mShowValue.itemViewHeight : 0)) / mShowValue.itemViewWidth);
         int column = (int) ((startPoint.y - mShowValue.offsetY) / mShowValue.itemViewHeight) - ((mShowValue.hasRowTitle) ? 1 : 0);
+        //判断是否选中不可选中区域
         if ((mShowValue.hasRowTitle && row < mValue.onlyReadXNum || mShowValue.hasColumnTitle && column < mValue.onlyReadYNum)) {
             return;
         }
+        //判断是否超过尾部
+        if (row > mValue.rows || column > mValue.columns) {
+            return;
+        }
+        //todo 这里判断有问题，要判断尾端
         //左上开始
         mSelectRange[0] = row;//第几列，X轴
         mSelectRange[1] = column;//第几行，Y轴

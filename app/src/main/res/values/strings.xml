@@ -13,7 +13,8 @@
 
     <string name="style1">open Style1</string>
     <string name="style2">open Style2</string>
-
+    <string name="style3">open by File</string>
+    <string name="save">Save</string>
 
 
 </resources>

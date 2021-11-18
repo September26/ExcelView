@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="360dp"
     android:background="#ffffff"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
 
 
     <com.xt.excelviewlib.view.ExcelView
@@ -21,5 +23,13 @@
         app:excel_view_select_bg_color="#0a2870F6"
         app:excel_view_select_divider_color="#2870F6"
         app:excel_view_text_size="11sp" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save" />
 
 </RelativeLayout>

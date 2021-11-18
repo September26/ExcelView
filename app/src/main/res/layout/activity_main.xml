@@ -10,29 +10,6 @@
     android:showDividers="middle"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/file_path"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="文件路径" />
-
-        <Button
-            android:id="@+id/file_select"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="文件选择" />
-    </LinearLayout>
-
-
     <Button
         android:id="@+id/button_first"
         android:layout_width="match_parent"
@@ -46,5 +23,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/style2" />
+
+    <Button
+        android:id="@+id/button_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/style3" />
 
 </LinearLayout>
