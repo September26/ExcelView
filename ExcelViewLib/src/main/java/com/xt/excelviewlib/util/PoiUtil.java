@@ -5,9 +5,11 @@ import com.xt.excelviewlib.view.ExcelView;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,22 +34,21 @@ public class PoiUtil {
         List<List<Double>> dataList = model.dataList;
         try {
             fis = new FileInputStream(file);
-            Workbook wk = new HSSFWorkbook(fis);
-//            if (file.getName().endsWith("xls")) {
-//                wk = new HSSFWorkbook(fis);
-//            } else {
-                //暂时不支持
-//                wk = new XSSFWorkbook(fis);
-//            }
+            Workbook wk;
+            if (file.getName().endsWith("xls")) {
+                wk = new HSSFWorkbook(fis);
+            } else {
+                wk = new XSSFWorkbook(fis);
+            }
             //获取第一张Sheet表
             Sheet sheet = wk.getSheetAt(0);
             for (Row r : sheet) {
                 ArrayList<Double> line = new ArrayList<>();
                 for (int i = r.getFirstCellNum(); i < r.getLastCellNum(); i++) {
                     Cell cell = r.getCell(i);
-                    if (cell.getCellType() == 0) {
+                    if (cell.getCellType() == CellType.NUMERIC) {
                         line.add(cell.getNumericCellValue());
-                    } else if (cell.getCellType() == 1) {
+                    } else if (cell.getCellType() == CellType.STRING) {
                         line.add(Double.parseDouble(cell.getStringCellValue()));
                     }
                 }
@@ -89,7 +90,7 @@ public class PoiUtil {
                     /* System.out.println("j:"+j); */
                     org.apache.poi.ss.usermodel.Cell cell = row.createCell(j);
                     // 设置格式
-                    cell.setCellType(1);
+                    cell.setCellType(CellType.NUMERIC);
                     // 设置值
                     cell.setCellValue(dataList.get(i).get(j));
                 }

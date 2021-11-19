@@ -28,12 +28,15 @@ android {
 }
 
 dependencies {
+    /**
+     * poi
+     */
 //    api project(':poi-ooxml')
-//    implementation project(path: ':poi', configuration: 'archives') ok 5.1.0
-//    compileOnly project(path: ':poi-ooxml', configuration: 'archives') ok 5.1.0
-//    compileOnly project(path: ':poi-ooxml-full', configuration: 'archives') ok 5.1.0
+//    implementation project(path: ':poi', configuration: 'archives')
+//    compileOnly project(path: ':poi-ooxml', configuration: 'archives')
+//    compileOnly project(path: ':poi-ooxml-full', configuration: 'archives')
 //    compileOnly project(path: ':poi-scratchpad', configuration: 'archives')
-//    implementation "org.apache.logging.log4j:log4j-core:${log4jVersion}" ok
+//    implementation "org.apache.logging.log4j:log4j-core:${log4jVersion}"
 
 //    implementation files('*.jar')
     api fileTree(dir: 'libs', include: ['*.jar'])
