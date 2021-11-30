@@ -9,6 +9,8 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -38,7 +40,7 @@ public class PoiUtil {
             if (file.getName().endsWith("xls")) {
                 wk = new HSSFWorkbook(fis);
             } else {
-                wk = new XSSFWorkbook(fis);
+                wk = WorkbookFactory.create(fis);
             }
             //获取第一张Sheet表
             Sheet sheet = wk.getSheetAt(0);
@@ -57,17 +59,19 @@ public class PoiUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+//        model.rows = dataList.size();
+//        model.columns = dataList.get(0).size();
         return model;
     }
 
     public static String write2Excel(String filePath, ExcelView.TableValueModel model) {
         // 判断后缀名，后缀名不同，生成的流不同
-//        if (filePath.endsWith("xlsx")) {
-//            poiwriteXlsx(model, filePath);
-//            return "不支持的文件格式";
-//        } else {
+        if (filePath.endsWith("xlsx")) {
+            poiwriteXlsx(model, filePath);
+            return "不支持的文件格式";
+        } else {
             return poiWriteXls(model, filePath);
-//        }
+        }
 
     }
 
@@ -114,37 +118,36 @@ public class PoiUtil {
 
     // XSSF对应的是xlsx格式
     private static void poiwriteXlsx(ExcelView.TableValueModel model, String filepath) {
-//		InputStream inp;
-//		ifexist(filepath);
-//		try {
-//			inp = new FileInputStream(filepath);
-//			int rownum = str.length;
-//			int columnum = str[0].length;
-//
-//			XSSFWorkbook wb = new XSSFWorkbook();
-//			XSSFSheet sheet = wb.createSheet("sheet1");
-//			for (int i = 0; i < rownum; i++) {
-//				// System.out.println("i:"+i);
-//				Row row = sheet.createRow(i);
-//				for (int j = 0; j < columnum; j++) {
-//					/* System.out.println("j:"+j); */
-//					Cell cell = row.createCell(j);
-//					// 设置格式
-//					cell.setCellType(Cell.CELL_TYPE_STRING);
-//					// 设置值
-//					cell.setCellValue(str[i][j]);
-//				}
-//			}
-//			// Write the output to a file
-//			FileOutputStream fileOut = new FileOutputStream(filepath);
-//			wb.write(fileOut);
-//			fileOut.close();
-//			inp.close();
-//			System.out.println("写入完成");
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+        InputStream inp;
+        ifexist(filepath);
+        try {
+            inp = new FileInputStream(filepath);
+            int rownum = model.dataList.size();
+            int columnum = model.dataList.get(0).size();
+            Workbook wb = WorkbookFactory.create(inp);
+            Sheet sheet = wb.createSheet("sheet1");
+            for (int i = 0; i < rownum; i++) {
+                // System.out.println("i:"+i);
+                Row row = sheet.createRow(i);
+                for (int j = 0; j < columnum; j++) {
+                    /* System.out.println("j:"+j); */
+                    Cell cell = row.createCell(j);
+                    // 设置格式
+                    cell.setCellType(CellType.STRING);
+                    // 设置值
+                    cell.setCellValue(model.dataList.get(i).get(j));
+                }
+            }
+            // Write the output to a file
+            FileOutputStream fileOut = new FileOutputStream(filepath);
+            wb.write(fileOut);
+            fileOut.close();
+            inp.close();
+            System.out.println("写入完成");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     // 传入文件的地址，判断文件是否存在，如果不存在的话创建该文件

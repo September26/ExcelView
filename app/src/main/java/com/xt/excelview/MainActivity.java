@@ -42,6 +42,19 @@ public class MainActivity extends AppCompatActivity {
             if (thirdFragment == null) {
                 thirdFragment = new Fragment3();
             }
+            Bundle bundle = new Bundle();
+            bundle.putString("type", "xls");
+            thirdFragment.setArguments(bundle);
+            showFragment(thirdFragment);
+        });
+
+        binding.buttonFourth.setOnClickListener(v -> {
+            if (thirdFragment == null) {
+                thirdFragment = new Fragment3();
+            }
+            Bundle bundle = new Bundle();
+            bundle.putString("type", "xlsx");
+            thirdFragment.setArguments(bundle);
             showFragment(thirdFragment);
         });
     }

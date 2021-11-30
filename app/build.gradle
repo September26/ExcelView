@@ -42,5 +42,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.0"
     api project(':ExcelViewLib')
+    implementation 'stax:stax-api:1.0.1'
 //    implementation 'io.github.september26:excelview:0.9.0'
 }

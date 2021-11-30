@@ -29,6 +29,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/style3" />
+        android:text="@string/openxls" />
+
+    <Button
+        android:id="@+id/button_fourth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/openxlsx" />
 
 </LinearLayout>

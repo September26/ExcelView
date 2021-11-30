@@ -190,8 +190,8 @@ public class ExcelView extends View {
         //构建二维数组
         this.mShowValue.hasRowTitle = !StringUtil.emptyOrNull(mValue.rowTitle);
         this.mShowValue.hasColumnTitle = !StringUtil.emptyOrNull(mValue.columnTitle);
-        this.mShowValue.rowNum = mValue.rows;
-        this.mShowValue.columnNum = mValue.columns;
+        this.mShowValue.rowNum = mValue.columns;
+        this.mShowValue.columnNum = mValue.rows;
         mShowValue.initCoord(mAttr);
         isInit = true;
         //todo 这里调用requestLayout，但是draw没有收到，所以要调用invalidate一次
@@ -596,8 +596,8 @@ public class ExcelView extends View {
         public void initCoord(AttrValue attrValue) {
             itemViewWidth = attrValue.itemWidth;
             itemViewHeight = attrValue.itemHeight;
-            viewComputeWidth = ((hasColumnTitle) ? itemViewHeight : 0F) + itemViewWidth * columnNum;
-            viewComputeHeight = ((hasRowTitle) ? itemViewHeight : 0F) + itemViewHeight * rowNum;
+            viewComputeWidth = ((hasColumnTitle) ? itemViewHeight : 0F) + itemViewWidth * rowNum;
+            viewComputeHeight = ((hasRowTitle) ? itemViewHeight : 0F) + itemViewHeight * columnNum;
             viewWidth = viewComputeWidth > measureWidth ? measureWidth : (int) viewComputeWidth;//最大宽度测量有问题
             viewHeight = viewComputeHeight > measureHeight ? measureHeight : (int) viewComputeHeight;
             iconRadius = attrValue.iconWidth / 2;

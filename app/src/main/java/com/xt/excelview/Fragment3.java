@@ -26,13 +26,13 @@ import java.io.InputStream;
 public class Fragment3 extends Fragment {
 
     private FragmentThirdBinding binding;
-    private final String FILE_NAME = "demo.xlsx";
-    private String filePath;
+    private final String FILE_NAME = "demo";
+    private String FILE_PATH;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        filePath = getActivity().getFilesDir().getAbsolutePath() + File.separator + FILE_NAME;
+        FILE_PATH = getActivity().getFilesDir().getAbsolutePath() + File.separator;
     }
 
     @Override
@@ -47,20 +47,26 @@ public class Fragment3 extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //拷贝文件到data/file目录下，然后跳转
-
+        Bundle arguments = getArguments();
+        String type = "xls";
+        if (arguments != null) {
+            type = arguments.getString("type");
+        }
+        String fileName = FILE_NAME + "." + type;
+        String filePath = FILE_PATH + fileName;
         File file = new File(filePath);
         if (!file.exists()) {
             try {
-                InputStream open = getActivity().getAssets().open(FILE_NAME);
+                InputStream open = getActivity().getAssets().open(fileName);
                 IOHelper.copyFileFromInputStream(open, file);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        showExcel(file);
+        showExcel(file, filePath);
     }
 
-    private void showExcel(File file) {
+    private void showExcel(File file, String filePath) {
         ExcelControlInter control = new CustomControlImpl(binding.excelView, null);
         ExcelView.TableValueModel model = PoiUtil.readExcel(file);
         Log.i("lxltest", "model:" + model.dataList.size());
