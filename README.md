@@ -37,7 +37,7 @@
 * 4.可扩展性：可自定义Dialog，通过ControlImpl和ExcelView组合实现对应场景逻辑。
 
 ## 后续计划
-* 1.添加excel导出为xls文件功能。
+* 1.添加excel导出为xls和xlsx文件功能。(已实现)
 * 2.看issues中的需求。
 
 
