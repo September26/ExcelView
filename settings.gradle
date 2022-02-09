@@ -1,3 +1,5 @@
 rootProject.name = "ExcelView"
 include ':app'
+include ':sample'
 include ':ExcelViewLib'
+include ':PoiLib'

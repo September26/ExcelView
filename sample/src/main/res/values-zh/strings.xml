@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="style1">样式1打开</string>
+    <string name="style2">样式2打开</string>
+    <string name="openxls">读取xls格式文件</string>
+    <string name="openxlsx">读取xlsx格式文件</string>
+    <string name="save">保存</string>
+</resources>

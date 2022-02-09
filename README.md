@@ -31,14 +31,16 @@
 
 
 ## 使用介绍
-* 1.参照app中的使用方法，build.gradle中添加依赖：'io.github.september26:excelview:0.9.0'
+* 1.参照sample中的使用方法，build.gradle中添加依赖库：'io.github.september26:excelview:0.9.4'
 * 2.参照app中Fragment1和Fragment2中的使用方法，直接使用ExcelControlImpl中已经写好的组合逻辑，或者继承ExcelControlImpl重写其组合逻辑。
 * 3.可扩展性：可通过继承ControlImpl重写其方法实现不同的业务场景逻辑。
 * 4.可扩展性：可自定义Dialog，通过ControlImpl和ExcelView组合实现对应场景逻辑。
+* 5.如果需要安卓上读写excel的能力，请添加依赖库'io.github.september26:excelview-poi:0.9.4'。使用PoiUtil进行读写操作。
 
 ## 后续计划
-* 1.添加excel导出为xls和xlsx文件功能。(已实现)
-* 2.看issues中的需求。
+* 1.添加excel导出为xls文件功能。（PS :0.9.4的版本已完成。2022.2.9）
+* 2.拆分页面绘制和excel文件读写为两个支持库。（PS :0.9.4的版本已完成。2022.2.9）
+* 3.看issues中的需求。
 
 
 ## 实现逻辑介绍
