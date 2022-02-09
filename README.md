@@ -3,11 +3,13 @@
 ## 项目介绍
 项目是仿照WPS中Excel的功能实现的，实现了显示，滑动，编辑等基本功能，并且结构简单，可扩展性强，绘制性能较高。
 项目分为两个支持库：
-ExcelViewLib：实现高性能表格控件的绘制，并支持各种交互方式的输入，可扩展性高。 
-使用方式：implementation 'io.github.september26:excelview:0.9.4'
-    
-PoiLib:打包POI的所有需要的所有jar包，并针对安卓进行针对性适配改动，实现了安卓设备上读写excel的功能。如果只有安卓上使用POI需求的同学，只依赖这个库即可。
-使用方式：implementation 'io.github.september26:excelview-poi:0.9.4'
+### ExcelViewLib：
+实现高性能表格控件的绘制，并支持各种交互方式的输入，可扩展性高。   
+使用方式：implementation 'io.github.september26:excelview:0.9.4'  
+
+### PoiLib:
+打包POI的所有需要的所有jar包，并针对安卓进行针对性适配改动，实现了安卓设备上读写excel的功能。如果只有安卓上使用POI需求的同学，只依赖这个库即可。  
+使用方式：implementation 'io.github.september26:excelview-poi:0.9.4'  
 
 项目还有一些excel的功能未实现，比如公式计算，自动扩展等等，希望后续使用的人能够一起参与进来，逐渐的进行完善和扩展。
 同步CSDN介绍：https://blog.csdn.net/rzleilei/article/details/121016009
@@ -63,7 +65,7 @@ WPS中excel实现了相当多的功能，不可能完全都实现，所以本项
 * 8.显示弹出框，支持对数据进行修。
 * 9.修改的数据进行变色显示。
 * 10.横向，纵向标题的实现。
-* 11.编辑好的数据，可以导出到xls文件当中。（暂未实现）
+* 11.编辑好的数据，可以导出到xls和xlsx文件当中.
 
 围绕这11个需求点，我们挨个去讨论下如何去实现。
 * **1.在一屏幕的范围内显示几十甚至上百个Cell，并且不能卡顿。**
